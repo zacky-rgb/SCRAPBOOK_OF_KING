@@ -274,7 +274,24 @@ section{
   background:rgba(255,255,255,.04);
   margin-bottom:14px;
 }
+.quiz-btn{
+  width:100%;
+  margin-top:12px;
+  padding:14px;
+  border:none;
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+  font-size:15px;
+  border:1px solid rgba(255,255,255,.08);
+}
 
+.quiz-btn:hover{
+  background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+  transform:translateY(-3px);
+}
 iframe{
   width:100%;
   height:400px;
@@ -613,7 +630,133 @@ footer{
 </div>
 
 </section>
+<section id="quiz">
 
+<div class="section-title">
+  <h2>Quiz Time 🚀</h2>
+  <p>Uji pengetahuan tentang rotasi bumi, revolusi bumi, dan Artemis.</p>
+</div>
+
+<div class="grid">
+
+  <!-- SOAL 1 -->
+  <div class="card">
+    <h3>
+      1. Mengapa di Indonesia tidak terjadi empat musim seperti di Eropa meskipun sama-sama mengalami revolusi bumi?
+    </h3>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      A. Karena Indonesia tidak mengalami rotasi bumi
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Benar! Indonesia berada dekat garis khatulistiwa.')">
+      B. Karena Indonesia berada dekat garis khatulistiwa sehingga penyinaran matahari relatif stabil
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      C. Karena Indonesia lebih dekat dengan bulan
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      D. Karena Indonesia memiliki banyak gunung api
+    </button>
+  </div>
+
+  <!-- SOAL 2 -->
+  <div class="card">
+    <h3>
+      2. Jika bumi berotasi dari barat ke timur, maka matahari akan tampak…
+    </h3>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      A. Terbit dari utara
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      B. Terbit dari selatan
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Benar! Matahari terlihat terbit dari timur.')">
+      C. Terbit dari timur dan terbenam di barat
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      D. Bergerak tetap di satu tempat
+    </button>
+  </div>
+
+  <!-- SOAL 3 -->
+  <div class="card">
+    <h3>
+      3. Mengapa program Artemis dianggap penting untuk masa depan eksplorasi luar angkasa?
+    </h3>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      A. Karena hanya bertujuan mengambil foto bulan
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Benar! Artemis jadi langkah awal menuju Mars.')">
+      B. Karena menjadi langkah awal persiapan eksplorasi manusia ke Mars
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      C. Karena menggantikan seluruh satelit bumi
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      D. Karena digunakan untuk memprediksi cuaca
+    </button>
+  </div>
+
+  <!-- SOAL 4 -->
+  <div class="card">
+    <h3>
+      4. Apa hubungan antara revolusi bumi dan penanggalan satu tahun?
+    </h3>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      A. Satu tahun dihitung dari satu kali bumi berotasi
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Benar! Revolusi bumi menentukan satu tahun.')">
+      B. Satu tahun dihitung dari satu kali bumi mengelilingi matahari
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      C. Satu tahun dihitung dari perubahan fase bulan
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      D. Satu tahun dihitung dari gerhana matahari
+    </button>
+  </div>
+
+  <!-- SOAL 5 -->
+  <div class="card">
+    <h3>
+      5. Astronaut pada misi Artemis direncanakan tinggal lebih lama di bulan dibanding misi Apollo karena…
+    </h3>
+
+    <button class="quiz-btn" onclick="alert('Benar! Teknologi sekarang lebih maju.')">
+      A. Teknologi dan sistem pendukung kehidupan sudah lebih berkembang
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      B. Bulan semakin dekat dengan bumi
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      C. Tidak memerlukan bahan bakar
+    </button>
+
+    <button class="quiz-btn" onclick="alert('Salah 😅')">
+      D. Astronaut tidak perlu kembali ke bumi
+    </button>
+  </div>
+
+</div>
+
+</section>
 <footer>
 Made With 🚀 by KELOMPOK TIGACOR STECU ABIEZ!😜 ( &copy; Made by Shine )
 </footer>
