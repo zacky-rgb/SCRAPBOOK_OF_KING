@@ -153,11 +153,46 @@ nav a:hover{
 }
 
 .earth{
-  width:250px;
-  height:250px;
+  width:260px;
+  height:260px;
   border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,#38bdf8,#1d4ed8,#0f172a);
-  box-shadow:0 0 80px rgba(56,189,248,.4);
+  position:relative;
+
+  background:
+  radial-gradient(circle at 30% 30%, #6ee7ff 0%, #38bdf8 25%, #2563eb 60%, #0f172a 100%);
+
+  box-shadow:
+  0 0 90px rgba(59,130,246,.45),
+  inset -25px -25px 40px rgba(0,0,0,.35);
+
+  overflow:hidden;
+}
+
+/* Benua */
+.earth::before{
+  content:'';
+  position:absolute;
+  width:120px;
+  height:120px;
+  background:#22c55e;
+  border-radius:50% 40% 60% 30%;
+  top:45px;
+  left:40px;
+  filter:blur(1px);
+  transform:rotate(15deg);
+}
+
+/* Benua kedua */
+.earth::after{
+  content:'';
+  position:absolute;
+  width:90px;
+  height:90px;
+  background:#16a34a;
+  border-radius:60% 30% 50% 40%;
+  bottom:40px;
+  right:45px;
+  transform:rotate(-20deg);
 }
 
 .orbit{
