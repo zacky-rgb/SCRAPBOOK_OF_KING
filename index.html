@@ -1,0 +1,534 @@
+# Redesain Website Scrapbook TIGACOR
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCRAPBOOK TIGACOR</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Space Grotesk',sans-serif;
+  background:#040816;
+  color:white;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at top left,#312e81 0%,transparent 30%),
+  radial-gradient(circle at bottom right,#0ea5e9 0%,transparent 30%),
+  linear-gradient(#020617,#040816);
+  z-index:-3;
+}
+
+.stars{
+  position:fixed;
+  inset:0;
+  background-image:
+  radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+  radial-gradient(1px 1px at 150px 80px,#fff,transparent),
+  radial-gradient(2px 2px at 300px 150px,#fff,transparent);
+  background-size:400px 300px;
+  animation:starsMove 100s linear infinite;
+  opacity:.7;
+  z-index:-2;
+}
+
+@keyframes starsMove{
+  from{transform:translateY(0)}
+  to{transform:translateY(-300px)}
+}
+
+nav{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:1100px;
+  padding:14px 20px;
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(14px);
+  background:rgba(255,255,255,.05);
+  border-radius:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
+}
+
+.logo{
+  font-size:1.1rem;
+  font-weight:700;
+}
+
+nav ul{
+  display:flex;
+  gap:12px;
+  list-style:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:#cbd5e1;
+  padding:10px 14px;
+  border-radius:14px;
+  transition:.3s;
+}
+
+nav a:hover{
+  background:rgba(255,255,255,.08);
+  color:white;
+}
+
+.hero{
+  min-height:100vh;
+  padding:140px 8vw 80px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:40px;
+}
+
+.hero h1{
+  font-size:clamp(3rem,7vw,6rem);
+  line-height:1;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  background:linear-gradient(90deg,#38bdf8,#818cf8,#c084fc);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  color:#94a3b8;
+  line-height:1.9;
+  max-width:650px;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:18px;
+  background:linear-gradient(90deg,#0ea5e9,#8b5cf6);
+  color:white;
+  font-weight:700;
+  box-shadow:0 10px 30px rgba(14,165,233,.25);
+}
+
+.btn2{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.planet-wrap{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:500px;
+}
+
+.earth{
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#38bdf8,#1d4ed8,#0f172a);
+  box-shadow:0 0 80px rgba(56,189,248,.4);
+}
+
+.orbit{
+  position:absolute;
+  width:400px;
+  height:400px;
+  border:1px dashed rgba(255,255,255,.2);
+  border-radius:50%;
+  animation:spin 15s linear infinite;
+}
+
+.moon{
+  position:absolute;
+  width:35px;
+  height:35px;
+  background:#f8fafc;
+  border-radius:50%;
+  top:-15px;
+  left:50%;
+  box-shadow:0 0 20px white;
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+section{
+  padding:90px 8vw;
+}
+
+.section-title{
+  text-align:left;
+  margin-bottom:40px;
+}
+
+.section-title h2{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#94a3b8;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:28px;
+  backdrop-filter:blur(14px);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card h3{
+  margin-bottom:18px;
+  font-size:1.4rem;
+}
+
+.card p,
+.card li{
+  color:#cbd5e1;
+  line-height:1.9;
+}
+
+.member{
+  padding:14px;
+  background:rgba(255,255,255,.04);
+  border-radius:16px;
+  margin-bottom:12px;
+}
+
+.member span{
+  color:#38bdf8;
+  font-size:.95rem;
+}
+
+.timeline{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.step{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+}
+
+.number{
+  min-width:55px;
+  height:55px;
+  border-radius:18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#38bdf8,#8b5cf6);
+  font-weight:700;
+}
+
+.fact{
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+  margin-bottom:14px;
+}
+
+iframe{
+  width:100%;
+  height:400px;
+  border:none;
+  border-radius:20px;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:#94a3b8;
+}
+
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .section-title{
+    text-align:center;
+  }
+
+  nav ul{
+    display:none;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<nav>
+  <div class="logo">🚀 TIGACOR</div>
+
+  <ul>
+    <li><a href="#anggota">Anggota</a></li>
+    <li><a href="#alat">Alat</a></li>
+    <li><a href="#langkah">Langkah</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#funfact">Fun Fact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+
+<div>
+  <h1>
+    SCRAPBOOK <span>TIGACOR</span>
+  </h1>
+
+  <p>
+    Website project IPA tentang Rotasi Bumi, Revolusi Bumi, dan Artemis II dengan desain modern bertema luar angkasa.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#anggota" class="btn">Mulai</a>
+    <a href="#funfact" class="btn btn2">Fun Fact</a>
+  </div>
+</div>
+
+<div class="planet-wrap">
+  <div class="orbit">
+    <div class="moon"></div>
+  </div>
+
+  <div class="earth"></div>
+</div>
+
+</section>
+
+<section id="anggota">
+  <div class="section-title">
+    <h2>Identitas Kelompok</h2>
+    <p>Daftar anggota kelompok project scrapbook.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Anggota Kelompok</h3>
+
+      <div class="member">
+        Anugerah Aufa Fatih Zaki Ozam<br>
+        <span>No Absen: 04</span>
+      </div>
+
+      <div class="member">
+        Damar Pandu Mukti<br>
+        <span>No Absen: 14</span>
+      </div>
+
+      <div class="member">
+        Farrelino Zacky Arsatya<br>
+        <span>No Absen: 17</span>
+      </div>
+
+      <div class="member">
+        Laiq Athar Rama Daniswara<br>
+        <span>No Absen: 22</span>
+      </div>
+
+      <div class="member">
+        Azalia Naya Anggraeni<br>
+        <span>No Absen: 10</span>
+      </div>
+
+      <div class="member">
+        Nadine Vania Putri Riyanto<br>
+        <span>No Absen: 26</span>
+      </div>
+
+      <div class="member">
+        Qonita Zahira Hanan<br>
+        <span>No Absen: 28</span>
+      </div>
+
+      <div class="member">
+        Quinsa Yeslin Selena Mukti<br>
+        <span>No Absen: 29</span>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <h3>Info Project</h3>
+
+      <p>
+      Project IPA / Sains bertema Fun Fact Bulan yang bertujuan mengenalkan Bulan sebagai satelit alami Bumi dengan tampilan menarik dan mudah dipahami.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="alat">
+<div class="section-title">
+<h2>Alat dan Bahan</h2>
+<p>Perlengkapan yang digunakan dalam membuat scrapbook.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Alat</h3>
+<ul>
+<li>Gunting</li>
+<li>Cutter</li>
+<li>Penggaris</li>
+<li>Kaitan binder</li>
+<li>Lem tembak</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Bahan</h3>
+<ul>
+<li>Karton</li>
+<li>Kertas manila</li>
+<li>Kertas asturo</li>
+<li>Kertas lipat</li>
+<li>Kertas gambar</li>
+<li>Kardus</li>
+<li>Isian lem tembak</li>
+<li>Lem kertas</li>
+<li>Selotip</li>
+<li>Double tip</li>
+<li>Stiker hiasan</li>
+<li>Spidol warna-warni</li>
+<li>Pulpen warna-warni</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="langkah">
+<div class="section-title">
+<h2>Cara Pengerjaan</h2>
+<p>Langkah membuat project scrapbook.</p>
+</div>
+
+<div class="card timeline">
+
+<div class="step">
+<div class="number">1</div>
+<div>
+<h3>Menentukan Tema</h3>
+<p>Kelompok memilih tema Fun Fact Bulan karena memiliki banyak fakta menarik.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="number">2</div>
+<div>
+<h3>Membagi Tugas</h3>
+<p>Setiap anggota memiliki tugas masing-masing agar pengerjaan lebih cepat.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="number">3</div>
+<div>
+<h3>Mengumpulkan Materi</h3>
+<p>Mencari informasi tentang Bulan, rotasi, revolusi, dan Artemis II.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="number">4</div>
+<div>
+<h3>Membuat Website</h3>
+<p>Website dibuat dengan tema luar angkasa dan animasi modern.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="video">
+<div class="section-title">
+<h2>Video Pembuatan</h2>
+<p>Dokumentasi proses pembuatan project.</p>
+</div>
+
+<div class="card">
+<iframe src="https://drive.google.com/file/d/1ClF81mIig9uZsy1h-SAU2zBUJ898nW2u/preview"></iframe>
+</div>
+</section>
+
+<section id="funfact">
+<div class="section-title">
+<h2>Fun Fact</h2>
+<p>Fakta menarik tentang rotasi, revolusi, dan Artemis II.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<div class="fact">🌍 Rotasi Bumi berlangsung sekitar 23 jam 56 menit 4 detik.</div>
+<div class="fact">🌍 Kecepatan rotasi di khatulistiwa mencapai ±1.670 km/jam.</div>
+<div class="fact">🌎 Revolusi Bumi membutuhkan 365 hari 6 jam.</div>
+<div class="fact">🌎 Orbit Bumi berbentuk elips.</div>
+<div class="fact">🚀 Artemis II adalah misi manusia ke sekitar Bulan sejak Apollo.</div>
+<div class="fact">🚀 Menjadi langkah awal menuju misi manusia ke Mars.</div>
+</div>
+</div>
+</section>
+
+<footer>
+Made With 🚀 By Kelompok 3
+</footer>
+
+</body>
+</html>
+```
