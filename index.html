@@ -153,46 +153,48 @@ nav a:hover{
 }
 
 .earth{
-  width:260px;
-  height:260px;
+  width:290px;
+  height:290px;
   border-radius:50%;
   position:relative;
+  overflow:hidden;
 
   background:
-  radial-gradient(circle at 30% 30%, #6ee7ff 0%, #38bdf8 25%, #2563eb 60%, #0f172a 100%);
+  radial-gradient(circle at 30% 30%, #8be9ff 0%, #4fc3f7 20%, #2563eb 55%, #071426 100%);
 
   box-shadow:
-  0 0 90px rgba(59,130,246,.45),
-  inset -25px -25px 40px rgba(0,0,0,.35);
+  0 0 120px rgba(56,189,248,.45),
+  inset -45px -45px 70px rgba(0,0,0,.45),
+  inset 20px 20px 40px rgba(255,255,255,.12);
 
-  overflow:hidden;
+  animation:earthRotate 18s linear infinite;
 }
-
 /* Benua */
 .earth::before{
   content:'';
   position:absolute;
-  width:120px;
-  height:120px;
-  background:#22c55e;
-  border-radius:50% 40% 60% 30%;
-  top:45px;
-  left:40px;
-  filter:blur(1px);
-  transform:rotate(15deg);
-}
+  inset:0;
 
+  background:
+  radial-gradient(circle at 30% 35%, #34d399 0%, #16a34a 12%, transparent 13%),
+  radial-gradient(circle at 55% 25%, #22c55e 0%, #15803d 10%, transparent 11%),
+  radial-gradient(circle at 70% 50%, #4ade80 0%, #166534 13%, transparent 14%),
+  radial-gradient(circle at 35% 75%, #22c55e 0%, #14532d 14%, transparent 15%),
+  radial-gradient(circle at 80% 78%, #4ade80 0%, #166534 11%, transparent 12%);
+
+  opacity:.95;
+}
 /* Benua kedua */
 .earth::after{
   content:'';
   position:absolute;
-  width:90px;
-  height:90px;
-  background:#16a34a;
-  border-radius:60% 30% 50% 40%;
-  bottom:40px;
-  right:45px;
-  transform:rotate(-20deg);
+  inset:0;
+
+  background:
+  radial-gradient(circle at 20% 20%, rgba(255,255,255,.35), transparent 30%),
+  radial-gradient(circle at 70% 80%, rgba(255,255,255,.08), transparent 35%);
+
+  mix-blend-mode:screen;
 }
 
 .orbit{
@@ -219,7 +221,14 @@ nav a:hover{
   from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
 }
-
+@keyframes earthRotate{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
 section{
   padding:90px 8vw;
 }
@@ -801,7 +810,7 @@ footer{
 
 </section>
 <footer>
-Made With 🚀 by KELOMPOK TIGACOR STECU ABIEZ!😜 ( &copy; Made by Shine )
+Made With 🚀 by KELOMPOK TIGACOR STECU ABIEZ!😜
 </footer>
 
 </body>
